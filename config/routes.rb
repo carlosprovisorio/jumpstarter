@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   root 'projects#index'
 
   resources :projects do
@@ -9,6 +10,12 @@ Rails.application.routes.draw do
   resources :users do 
     resources :pledges, only: [:index, :destroy] 
   end
+
+  resources :user_sessions
+
+  get 'login' => 'user_sessions#new', :as => :login
+  post 'logout' => 'user_sessions#destroy', :as => :logout
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
