@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  root 'projects#index'
+
+  resources :projects do
+    resources :rewards, only: [:new, :create, :destroy]
+    resources :pledges, only: [:new, :create]
+  end
+
+  resources :users do 
+    resources :pledges, only: [:index, :destroy] 
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
