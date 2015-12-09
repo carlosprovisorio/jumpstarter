@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     if session[:user_id]
       @current_user ||= User.find(session[:user_id])
     else
-      return nill
+      return nil
   end
 end
 
