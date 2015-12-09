@@ -6,11 +6,25 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-#my_users = User.create([{name: "User1"},{name: "User2"}])
-#my_projects = Project.create([{name:"project 1"},{name:"project 2"}])
-#my_pledges = Pledge.create([{created_at:""},{created_at:""}])
-#my_rewards = Reward.create([{title:"100 bucks"},{title: "200 bucks"}])
+Pledge.destroy_all
+Reward.destroy_all
+Project.destroy_all
+User.destroy_all
 
-# User has many projects
-#my_users[0].projects << my_projects[0]
+user1 = User.create({email: "User1", password:"test", password_confirmation:"test"})
+user2 = User.create({email: "User2", password:"test", password_confirmation:"test"})
+backer1 = User.create({email: "Backer1", password:"test", password_confirmation:"test"})
+
+proj1 = user1.projects.create({name:"project 1"})
+proj2 = user2.projects.create({name:"project 2"})
+
+Project.all.each do |proj|
+	reward1 = proj.rewards.create({title:"100 bucks"})
+	reward2 = proj.rewards.create({title: "200 bucks"})
+	pledge = reward1.pledges.create(user: backer1)
+	pledge = reward2.pledges.create(user: backer1)
+end
+
+
+
 

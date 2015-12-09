@@ -7,9 +7,8 @@ before_action :require_login
 
 
 	def create
-		@temp_user = User.first
 		@project = Project.new(project_params)
-		@project.user = @temp_user
+		@project.user = current_user
 
 		if @project.save
       		redirect_to project_path(@project), notice: "Successfully created the product."
@@ -48,11 +47,11 @@ private
   def project_params
     params.require(:project).permit(:name, :start_date, :end_date, :goal, :description, :active)
   end
-	
+
 end
 
 
 #@project = @temp_user.projects.build(project_params)
-#@temp_user.projects <<  @project 
+#@temp_user.projects <<  @project
 #@project = @temp_user.build_project(project_params)
 
