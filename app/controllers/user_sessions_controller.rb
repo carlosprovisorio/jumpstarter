@@ -14,6 +14,20 @@ class UserSessionsController < ApplicationController
 		end
 	end
 
+	def forgot_password
+	end
+
+
+	def submit_forgot_password
+		@user = User.where(email: params[:email]).first
+		 if @user
+		 	@user.deliver_reset_password_instructions!
+		 else
+		 	flash.now[:alert] = 'Email not founded'
+		 end
+		 redirect_to(root_path, :notice => 'Instructions have been sent to your email.')
+	end
+
 	def destroy
 		logout
 		redirect_to(:users, notice: 'Logged out!')

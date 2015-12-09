@@ -6,11 +6,14 @@ Rails.application.routes.draw do
     resources :pledges, only: [:new, :create]
   end
 
-  resources :users do 
-    resources :pledges, only: [:index, :destroy] 
+  resources :users do
+    resources :pledges, only: [:index, :destroy]
   end
 
   resources :user_sessions
+
+  get 'forgot_password' => 'user_sessions#forgot_password'
+  post 'submit_forgot_password' => 'user_sessions#submit_forgot_password'
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
