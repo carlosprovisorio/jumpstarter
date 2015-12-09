@@ -1,4 +1,4 @@
-class ProjectController < ApplicationController
+class ProjectsController < ApplicationController
 
 	def new
 	end
@@ -8,5 +8,5 @@ class ProjectController < ApplicationController
 
 	def destroy
 	end
-	
+
 end
