@@ -19,7 +19,6 @@ class ApplicationController < ActionController::Base
 end
 
 
-
   def authenticate_user
     unless current_user
       redirect_to '/login'
