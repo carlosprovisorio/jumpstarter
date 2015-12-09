@@ -7,7 +7,6 @@ class UserMailer < ApplicationMailer
   #
 
   def reset_password_email(user)
-    puts "carlos"
     @user = User.find user.id
     @url  = @user.reset_password_token
     mail(:to => user.email,
