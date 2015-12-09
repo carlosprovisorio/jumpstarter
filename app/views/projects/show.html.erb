@@ -1,0 +1,13 @@
+<h1>Showing details for <%= @project.name %></h1>
+
+<%= link_to "Back to home", projects_path %> |
+
+<p>Name: <%= @project.name %> </p>
+<p>Summary: <%= @project.description %></p>
+<p>Start Date: <%= @project.start_date %></p>
+<p>End Date: <%= @project.end_date %></p>
+<p>Active: <%= @project.active %></p>
+<p>Goal: <%= @project.goal %></p>
+<p>Owner: <%= @project.user.email %></p>
+
+	
