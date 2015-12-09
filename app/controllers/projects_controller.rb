@@ -21,14 +21,14 @@ class ProjectsController < ApplicationController
 		 @project = Project.find(params[:id])
 	end
 
-
+	  def index
+	  end
 
 	def edit
 	end
 
 	def destroy
 	end
-
 
 private
 
@@ -42,3 +42,4 @@ end
 #@project = @temp_user.projects.build(project_params)
 #@temp_user.projects <<  @project 
 #@project = @temp_user.build_project(project_params)
+

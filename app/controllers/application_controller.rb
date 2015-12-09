@@ -8,4 +8,13 @@ class ApplicationController < ActionController::Base
   def not_authenticated
   	redirect_to login_path, alert: "Please login first"
   end
+
+  def current_user
+    if session[:user_id]
+      @current_user ||= User.find(session[:user_id])
+    else
+      return nill
+  end
+end
+
 end
