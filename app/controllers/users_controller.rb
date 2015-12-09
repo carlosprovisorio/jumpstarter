@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
 	skip_before_action :require_login, only: [:index, :new, :create]
 
+	def show
+  @projects_owned = current_user.projects.all
+	end
+
+
 	def new
 		@user= User.new
 	end
