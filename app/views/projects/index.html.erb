@@ -12,22 +12,26 @@
 	
 </div>
 
-<div class="row" id="products_title">
+<div class="row" id="projects_title">
 	<div id="jumpstarter_title">
 		<h1 id="jumpstarter_text"> Current Projects </h1>
 	</div>
 </div>
 
-<div class="row" id="products_body"> 
-	<% @projects.each do |p| %>
-	<p>Name: <%= p.name %> </p>
-	<p>Summary: <%= p.description %></p>
-	<p>Start Date: <%= p.start_date %></p>
-	<p>End Date: <%= p.end_date %></p>
-	<p>Active: <%= p.active %></p>
-	<p>Goal: <%= p.goal %></p>
-	<p>Owner: <%= p.user.email %></p>
-	<% end %>
+<div id="projects_body"> 
+	<div id="project_container">
+		<% @projects.each do |p| %>
+		<div class="project_box">
+			<img class="placeholder_img" src="https://placehold.it/2400x1600">
+			<div class="text_holder">
+				<p class="project_name"><%= p.name %></p>
+				<p class="description"> <%= p.description %></p>
+				<p class="end_date"><%= p.end_date.to_date %></p>
+				<p class="goal"><%= p.goal %></p>
+			</div>
+		</div>
+		<% end %>
+	</div>
 </div>
 
 

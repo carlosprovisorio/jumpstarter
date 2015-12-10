@@ -63,6 +63,16 @@ table {
 	border-spacing: 0;
 }
 
+body {
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+
 #spacer {
 	height: 25px;
+}
+
+.row {
+	margin-left: 0;
+	margin-right: 0;
 }

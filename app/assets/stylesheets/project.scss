@@ -4,9 +4,9 @@
 
 #landing {
 	background-image: url('city.jpg');
-	max-width: 100vw;
+	max-width: 100%;
 	height: 70vh;
-	background-size: 100vw 100vh;
+	background-size: 100% 100vh;
 }
 
 
@@ -25,11 +25,11 @@
 	text-align: center;
 }
 
-#products_title {
+#projects_title {
 	background-color: #65FF57;
 	height: 25vh;
 
-	width: 100vw;
+	width: 100%;
 }
 
 #jumpstarter_title {
@@ -45,7 +45,57 @@
 
 }
 
-#products_body {
-	height: 100vh;
+#projects_body {
+	width: 100%;
 	background-color: #57B9FF;
+}
+
+#project_container {
+	display: flex;
+	width: 100%;
+	padding-top: 3vh;
+}
+
+.project_box {
+	display: inline;
+	border: 1px solid black;
+	border-radius: 10px;
+	text-align: center;
+	padding-top: 5vh;
+	min-width: 25vw;
+	min-height: 80vh;
+	margin-top: 2vh;
+	margin-left: 5vh;
+	margin-right: 5vh;
+	margin-bottom: 5vh;
+	background-color: #F2F2F2;
+}
+
+.placeholder_img {
+	max-height: auto;
+	max-width: 100%;
+}
+
+.text_holder {
+	margin-top: 2vh;
+	width: 100%;
+}
+
+.project_name {
+	font-size: 2em;
+}
+
+.description {
+	margin-top: 1vh;
+	font-size: 1em;
+}
+
+.end_date {
+	margin-top: 1vh;
+	font-size: 1.5em;
+	color: blue;
+}
+
+.goal {
+	margin-top: 1vh;
 }
