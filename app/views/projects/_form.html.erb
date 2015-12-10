@@ -40,7 +40,24 @@
           <%= render 'reward_fields', :f => reward %>
         <% end %>
       </ul>
-    <%= link_to_add_association 'Add Reward', f, :rewards %>
+    <%= link_to_add_association 'Add Reward', f, :rewards, 'data-association-insertion-method' => 'append' %>
+
+    <div id="rewards">
+
+      Rewards:
+        <ul>
+          <%= f.fields_for :rewards do |ff| %>
+            <%= render partial: 'reward_fields', locals: {:f => ff} %>
+          <% end %>
+        </ul>
+
+       <div class="links">
+         <%= link_to_add_association 'Add Reward', f, :rewards %>
+       </div>
+    </div>
+
+    
+
 	  <div class="submit">
       <%= f.submit %>
   	</div>

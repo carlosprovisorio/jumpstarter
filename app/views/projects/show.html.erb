@@ -1,6 +1,6 @@
 <h1>Showing details for <%= @project.name %></h1>
 
-<%= link_to "Back to home", projects_path %> |
+<%= link_to "Back to home", projects_path %> 
 
 <p>Name: <%= @project.name %> </p>
 <p>Summary: <%= @project.description %></p>
@@ -9,4 +9,43 @@
 <p>Active: <%= @project.active %></p>
 <p>Goal: <%= @project.goal %></p>
 <p>Owner: <%= @project.user.email %></p>
-  <p id="amount-raised"> The amount raised: $<%= @project.amount_raised %> </p>
+
+<p id="amount-raised"> The amount raised: $<%= @project.amount_raised %> </p>
+
+
+
+<h2> Rewards </h2>
+
+<% if @project.rewards.any? %>
+
+	<% @project.rewards.each do |reward| %>
+
+	<div>
+		<p>Reward Title: <%= reward.title %>
+		<p>Reward Price: <%= reward.price %>
+		<p>Reward Description: <%= reward.description %>
+		<p>
+	</div>
+	<% end %>
+
+<% else %>
+
+<p> No rewards have been setup for this project!.
+
+<% end %>
+
+<h2> Pledges </h2>
+
+<% if @current_user.pledges.any? %>
+	<% @current_user.pledges.each do |pledge| %>
+	<div>
+		<p>You have pledged <%= pledge.reward.title %>
+	</div>
+	<% end %>
+
+<% else %>
+
+<p> No pledges for this project!.
+
+<% end %>
+
