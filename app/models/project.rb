@@ -8,7 +8,6 @@ class Project < ActiveRecord::Base
 
 
   def amount_raised
-    self.rewards.sum(:price)
-
+    self.pledges.sum(:price)
   end
 end
