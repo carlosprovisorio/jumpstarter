@@ -34,13 +34,21 @@
       <p class="input" id="active"><%= f.select :active, [['Active',true],['Inactive',false]] %></p>
     </div>
 
-    Rewards:
-      <ul>
-        <%= f.fields_for :rewards do |reward| %>
-          <%= render 'reward_fields', :f => reward %>
-        <% end %>
-      </ul>
-    <%= link_to_add_association 'Add Reward', f, :rewards %>
+    <div id="rewards">
+
+      Rewards:
+        <ul>
+          <%= f.fields_for :rewards do |ff| %>
+            <%= render partial: 'reward_fields', locals: {:f => ff} %>
+          <% end %>
+        </ul>
+
+       <div class="links">
+         <%= link_to_add_association 'Add Reward', f, :rewards %>
+       </div>
+    </div>
+
+    
 	  <div class="submit">
       <%= f.submit %>
   	</div>

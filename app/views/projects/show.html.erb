@@ -11,3 +11,37 @@
 <p>Owner: <%= @project.user.email %></p>
 
 
+<h2> Rewards </h2>
+
+<% if @project.rewards.any? %>
+
+	<% @project.rewards.each do |reward| %>
+
+	<div>
+		<p>Reward Title: <%= reward.title %>
+		<p>Reward Price: <%= reward.price %>
+		<p>Reward Description: <%= reward.description %>
+		<p>
+	</div>
+	<% end %>
+
+<% else %>
+
+<p> No rewards have been setup for this project!.
+
+<% end %>
+
+<h2> Pledges </h2>
+
+<% if @current_user.pledges.any? %>
+	<% @current_user.pledges.each do |pledge| %>
+	<div>
+		<p>You have pledged <%= pledge.reward.title %>
+	</div>
+	<% end %>
+
+<% else %>
+
+<p> No pledges for this project!.
+
+<% end %>
