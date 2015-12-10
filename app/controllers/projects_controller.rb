@@ -21,8 +21,8 @@ before_action :require_login
 		 @project = Project.find(params[:id])
 	end
 
-	  def index
-	  end
+  	def index
+  	end
 
 	def edit
 		@project = Project.find(params[:id])
@@ -45,7 +45,7 @@ before_action :require_login
 private
 
   def project_params
-    params.require(:project).permit(:name, :start_date, :end_date, :goal, :description, :active)
+    params.require(:project).permit(:name, :start_date, :end_date, :goal, :description, :active, tasks_attributes: [:id, :price, :title, :_destroy, :description])
   end
 
 end
