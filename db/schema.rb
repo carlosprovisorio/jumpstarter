@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20151209013722) do
     t.datetime "updated_at", null: false
     t.integer  "reward_id"
     t.integer  "user_id"
+
   end
 
   create_table "projects", force: :cascade do |t|
