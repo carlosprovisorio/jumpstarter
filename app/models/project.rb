@@ -4,7 +4,7 @@ class Project < ActiveRecord::Base
 	has_many :pledges, through: :rewards
 
   def amount_raised
-    self.pledges.sum(:amount)
+    self.rewards.sum(:price)
 
   end
 
