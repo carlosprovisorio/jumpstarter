@@ -1,0 +1,18 @@
+<h1>All Projects <%= current_user.email %></h1>
+
+<% if @projects_owned.any? %>
+
+		<% @projects_owned.each do |project| %>
+			<p><%=project.start_date %></p>
+			<p><%=project.end_date %></p>
+			<p><%=project.goal %></p>
+			<p><%=project.user.email %></p>
+			<p><%=project.active%></p>
+			<p><%=project.description%></p>
+		<% end %>
+
+<% else %>
+	<p>No Projects for <%= current_user.email%></p>
+<% end %>
+
+
