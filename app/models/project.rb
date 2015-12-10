@@ -17,5 +17,4 @@ class Project < ActiveRecord::Base
   		self.rewards.sum(:price)
   	end
 
->>>>>>> 3d644be48c052d772354a38ba72d5b1a8ff89deb
 end
