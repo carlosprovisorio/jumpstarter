@@ -22,6 +22,7 @@ before_action :require_login
 	end
 
   	def index
+  		@projects = Project.all
   	end
 
 	def edit
