@@ -3,10 +3,10 @@ class Project < ActiveRecord::Base
 	has_many :rewards
 	has_many :pledges, through: :rewards
 
-def amount_raised
-   self.pledges.sum(:amount)
+  def amount_raised
+    self.pledges.sum(:amount)
 
-end
+  end
 
 
 
