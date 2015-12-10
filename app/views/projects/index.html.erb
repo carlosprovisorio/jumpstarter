@@ -1,12 +1,34 @@
 
-<% @projects.each do |project| %>
 
-	<p>Name: <%= project.name %> </p>
-	<p>Summary: <%= project.description %></p>
-	<p>Start Date: <%= project.start_date %></p>
-	<p>End Date: <%= project.end_date %></p>
-	<p>Active: <%= project.active %></p>
-	<p>Goal: <%= project.goal %></p>
-	<p>Owner: <%= project.user.email %></p>
+<div class="row" id="landing">
+	<div class="col-md-2">
+	</div>
+	<div class="col-md-8" id="quote">
+		<p id="title_text">jumpStarter</p>
+		<p id="quote_text">Fund some cool shit </p>
+	</div>
+	<div class="col-md-2">
+	</div>
+	
+</div>
 
-<% end %>
+<div class="row" id="products_title">
+	<div id="jumpstarter_title">
+		<h1 id="jumpstarter_text"> Current Projects </h1>
+	</div>
+</div>
+
+<div class="row" id="products_body"> 
+	<% @projects.each do |p| %>
+	<p>Name: <%= p.name %> </p>
+	<p>Summary: <%= p.description %></p>
+	<p>Start Date: <%= p.start_date %></p>
+	<p>End Date: <%= p.end_date %></p>
+	<p>Active: <%= p.active %></p>
+	<p>Goal: <%= p.goal %></p>
+	<p>Owner: <%= p.user.email %></p>
+	<% end %>
+</div>
+
+
+
