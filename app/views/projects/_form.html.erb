@@ -32,12 +32,17 @@
 
       <p class="label"><%= f.label :active %></p>
       <p class="input" id="active"><%= f.select :active, [['Active',true],['Inactive',false]] %></p>
-
-
     </div>
 
-  	<div class="submit">
-    	<%= f.submit %>
+    Rewards:
+      <ul>
+        <%= f.fields_for :rewards do |reward| %>
+          <%= render 'reward_fields', :f => reward %>
+        <% end %>
+      </ul>
+    <%= link_to_add_association 'Add Reward', f, :rewards %>
+	  <div class="submit">
+      <%= f.submit %>
   	</div>
   <% end %>
 </div>
