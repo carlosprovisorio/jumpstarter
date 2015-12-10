@@ -21,8 +21,10 @@ before_action :require_login
 		 @project = Project.find(params[:id])
 	end
 
-	  def index
-	  end
+    def index
+    	@project = Project.all
+
+    end
 
 	def edit
 		@project = Project.find(params[:id])
