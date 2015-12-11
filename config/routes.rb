@@ -3,8 +3,12 @@ Rails.application.routes.draw do
 
   resources :projects do
     resources :rewards, only: [:new, :create, :destroy]
-    resources :pledges, only: [:new, :create]
+ #   resources :pledges, only: [:new, :create]
   end
+
+  resources :rewards, only: [] do
+    resources :pledges, only: [:new, :create]
+  end 
 
   resources :users do
     resources :pledges, only: [:index, :destroy]
