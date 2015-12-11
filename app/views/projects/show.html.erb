@@ -24,7 +24,7 @@
 		<p>Reward Title: <%= reward.title %>
 		<p>Reward Price: <%= reward.price %>
 		<p>Reward Description: <%= reward.description %>
-		<p>
+		<p><%= link_to "Make a pledge to earn this reward", new_reward_pledge_path(reward) %>
 	</div>
 	<% end %>
 
@@ -48,4 +48,7 @@
 <p> No pledges for this project!.
 
 <% end %>
+
+
+
 

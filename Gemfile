@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "pry-rails"
 gem "cocoon"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -27,6 +28,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'sorcery'
+
+gem "letter_opener", group: :development
 # Use Unicorn as the app server
 # gem 'unicorn'
 
