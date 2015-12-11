@@ -1,4 +1,7 @@
-<h1>All Projects <%= current_user.email %></h1>
+
+<h1><%= current_user.email %></h1>
+
+<h2>Projects you are the owner of:</h2>
 
 <% if @projects_owned.any? %>
 
@@ -16,3 +19,6 @@
 <% end %>
 
 
+<h2>Projects you are backing: </h2>
+
+***** Not a method, yet*****
