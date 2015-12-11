@@ -2,7 +2,8 @@ class UsersController < ApplicationController
 	skip_before_action :require_login, only: [:index, :new, :create]
 
 	def show
-  @projects_owned = current_user.projects.all
+  		@projects_owned = current_user.projects.all
+  		# @projects_backed = current_user.projects.
 	end
 
 
@@ -25,12 +26,12 @@ class UsersController < ApplicationController
 
 	def update
     @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
-     	redirect_to root_path
-    else
-      render 'edit'
+	    if @user.update_attributes(user_params)
+	     	redirect_to root_path
+	    else
+	      render 'edit'
+	    end
     end
-  end
 
 	def edit
 		@user = User.find(params[:id])
