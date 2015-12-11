@@ -68,10 +68,14 @@ body {
 	font-weight: 300;
 }
 
-#spacer {
+/*#spacer {
 	height: 25px;
-}
+}*/
 
+
+a {
+	text-decoration: none;
+}
 .row {
 	margin-left: 0;
 	margin-right: 0;

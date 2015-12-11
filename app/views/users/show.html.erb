@@ -1,18 +1,36 @@
-<h1>All Projects <%= current_user.email %></h1>
+<div class="spacer">
+</div>
+
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+		<p id="my_profile"> My Profile </p>
+		<p id="my_name"> User Name </p>
+	</div>
+	<div class="col-md-2"></div>
+</div>
+
+<div class="row" id="my_projects">
 
 <% if @projects_owned.any? %>
-
+<div id="owner_projects_container"
 		<% @projects_owned.each do |project| %>
-			<p><%=project.start_date %></p>
-			<p><%=project.end_date %></p>
-			<p><%=project.goal %></p>
-			<p><%=project.user.email %></p>
-			<p><%=project.active%></p>
-			<p><%=project.description%></p>
+		<div id="a_project">
+			<p id="proj_name"><%= project.name %> </p>
+			<p id="proj_descrip"><%= project.description %> </p>
+			<p id="proj_start"><%=project.start_date %></p>
+			<p id="proj_end"><%=project.end_date %></p>
+			<p id="proj_goal"><%=project.goal %></p>
+			<p id="proj_email"><%=project.user.email %></p>
+			<p id="proj_active"><%=project.active%></p>
+		</div>
 		<% end %>
-
+</div>
 <% else %>
 	<p>No Projects for <%= current_user.email%></p>
 <% end %>
+</div>
+
+
 
 

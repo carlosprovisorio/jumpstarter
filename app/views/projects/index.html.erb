@@ -1,6 +1,37 @@
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+ 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active pic_holder">
+      <img src="http://www.tumotech.com/wp-content/uploads/2014/05/fire-hands-super-hq-302329edited.jpg" alt="...">
+      <div class="carousel-caption">
+          <h3 class="quotation">Inspire Change</h3>
+      </div>
+    </div>
+    <div class="item pic_holder">
+      <img src="http://viavox.pl/wp-content/uploads/2015/06/HR-Technology-Trends.jpg" alt="...">
+      <div class="carousel-caption">
+          <h3 class="quotation">Build a Better Future</h3>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div> <!-- Carousel -->
 
-
-<div class="row" id="landing">
+<!-- <div class="row" id="landing">
 	<div class="col-md-2">
 	</div>
 	<div class="col-md-8" id="quote">
@@ -10,9 +41,10 @@
 	<div class="col-md-2">
 	</div>
 	
-</div>
-
+</div> -->
+<a name="projects_display">
 <div class="row" id="projects_title">
+</a>
 	<div id="jumpstarter_title">
 		<h1 id="jumpstarter_text"> Current Projects </h1>
 	</div>
@@ -26,8 +58,8 @@
 			<div class="text_holder">
 				<p class="project_name"><%= p.name %></p>
 				<p class="description"> <%= p.description %></p>
-				<p class="end_date"><%= p.end_date.to_date %></p>
-				<p class="goal"><%= p.goal %></p>
+				<p class="end_date">End Date: <%= p.end_date.to_date %></p>
+				<p class="goal">Fundraising Goal: <%= p.goal %></p>
 			</div>
 		</div>
 		<% end %>
@@ -35,4 +67,9 @@
 </div>
 
 
+<script>
+    $('.carousel').carousel({
+        interval: 6000
+    })
+</script>
 

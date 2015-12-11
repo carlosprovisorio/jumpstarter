@@ -7,11 +7,9 @@ def new
     @current_user.pledges << @pledge
 
     if @pledge.save
-      #redirect_to project_path(@current_user), notice: 'You claimed a pledge!'
-      redirect_to :back
-      #link_to("Project", :back) 
-    else
-      render 'product_path'
+		redirect_to user_path(current_user)    
+	else
+      	render 'project_path'	
     end
  
 end
@@ -20,4 +18,5 @@ end
 
 
   end
+
 end

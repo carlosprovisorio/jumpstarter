@@ -2,6 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+	background-color: #141414;
+}
+
+.carousel {
+	height: 100vh;
+}
+
+.pic_holder {
+	max-height: 100vh;
+	min-width: 100vh;
+}
+
+
 #landing {
 	background-image: url('city.jpg');
 	max-width: 100%;
@@ -14,7 +28,10 @@
 	font-size: 2em;	
 }
 
-
+.quotation {
+	margin-bottom: 40vh;
+	font-size: 10vh;
+}
 
 #quote {
 	margin-top: 5%;
@@ -26,7 +43,7 @@
 }
 
 #projects_title {
-	background-color: #65FF57;
+	background-color: #141414;
 	height: 25vh;
 
 	width: 100%;
@@ -47,23 +64,26 @@
 
 #projects_body {
 	width: 100%;
-	background-color: #57B9FF;
+	background-color: grey;
 }
 
 #project_container {
 	display: flex;
-	width: 100%;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 100vw;
 	padding-top: 3vh;
 }
 
 .project_box {
 	display: inline;
+	float: left;
 	border: 1px solid black;
 	border-radius: 10px;
 	text-align: center;
 	padding-top: 5vh;
-	min-width: 25vw;
-	min-height: 80vh;
+	max-width: 25vw;
+	height: 80vh;
 	margin-top: 2vh;
 	margin-left: 5vh;
 	margin-right: 5vh;
@@ -86,16 +106,17 @@
 }
 
 .description {
-	margin-top: 1vh;
+	margin-top: 2vh;
 	font-size: 1em;
 }
 
 .end_date {
-	margin-top: 1vh;
+	margin-top: 2vh;
 	font-size: 1.5em;
 	color: blue;
 }
 
 .goal {
-	margin-top: 1vh;
+	font-size: 1.5em;
+	margin-top: 2vh;
 }

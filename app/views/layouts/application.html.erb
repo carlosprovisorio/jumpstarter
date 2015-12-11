@@ -10,15 +10,6 @@
   <!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-<!--   // <script src="js/jquery.mousewheel.min.js" type="text/javascript"></script>
-
-  // <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
-
-  // <script src="js/jquery.kinetic.js" type="text/javascript"></script> -->
-
-  
-  
-
 	  <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -50,7 +41,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="/">Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="/projects">Projects</a></li>
+        <li><a href="#projects_display">Projects</a></li>
 
 		<% if current_user %>
         <li><%= link_to 'My Profile', user_path(current_user.id)%>
@@ -60,12 +51,6 @@
         <li><a href="users/new">Sign Up</a></li>
         <% end %>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
@@ -76,6 +61,7 @@
 
 <div id="spacer">
 </div>
+
 	<%= yield %>
 
 </body>
