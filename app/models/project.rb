@@ -6,10 +6,10 @@ class Project < ActiveRecord::Base
 
 	accepts_nested_attributes_for :rewards, reject_if: :all_blank, allow_destroy: true
 
-	def completed 
+	def completed
 		if Datetime.now >= @project.end_date do |p|
-			p.active = false 
-		end		
+			p.active = false
+		end
 	  end
 	end
 

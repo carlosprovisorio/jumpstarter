@@ -13,4 +13,6 @@ class User < ActiveRecord::Base
 	validates :password_confirmation, presence: true, if: -> { new_record? || changes["password"] }
 
 	validates :email, uniqueness: true
+
+	accepts_nested_attributes_for :pledges, reject_if: :all_blank, allow_destroy: true
 end
