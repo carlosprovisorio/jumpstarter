@@ -16,19 +16,19 @@
 
     <div class="labels-and-inputs">
       <p class="label"><%= f.label :name %></p>
-      <p class="input" id="name"><%= f.text_field :name %></p>
+      <p class="input" id="name"> Name: <%= f.text_field :name %></p>
 
       <p class="label"><%= f.label :start_date %></p>
-      <p class="input" id="start_date"><%= f.date_select :start_date %></p>
+      <p class="input" id="start_date"> Start Date: <%= f.date_select :start_date %></p>
       
       <p class="label"><%= f.label :end_date %></p>
-      <p class="input" id="end_date"><%= f.date_select :end_date %></p>
+      <p class="input" id="end_date"> End Date: <%= f.date_select :end_date %></p>
 
       <p class="label"><%= f.label :goal %></p>
-      <p class="input" id="goal"><%= f.number_field :goal %></p>
+      <p class="input" id="goal"> Goal: <%= f.number_field :goal %></p>
 
       <p class="label"><%= f.label :description%></p>
-      <p class="input" id="description"><%= f.text_area :description %></p>
+      <p class="input" id="description"> Description: <%= f.text_area :description %></p>
 
       <p class="label"><%= f.label :active %></p>
       <p class="input" id="active"><%= f.select :active, [['Active',true],['Inactive',false]] %></p>
