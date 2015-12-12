@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem "pry-rails"
+require "pry-rails"
 gem "cocoon"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
