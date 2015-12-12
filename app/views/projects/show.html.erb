@@ -22,10 +22,10 @@
 	<% @project.rewards.each do |reward| %>
 
 	<div>
-		<p>Reward Title: <%= reward.title %>
-		<p>Reward Price: <%= reward.price %>
-		<p>Reward Description: <%= reward.description %>
-		<p><%= link_to "Make a pledge to earn this reward", new_reward_pledge_path(reward) %>
+		<p>Reward Title: <%= reward.title %></p>
+		<p>Reward Price: <%= reward.price %></p>
+		<p>Reward Description: <%= reward.description %></p>
+		<p><%= link_to "Make a pledge to earn this reward", new_reward_pledge_path(reward) %></p>
 	</div>
 	<% end %>
 
