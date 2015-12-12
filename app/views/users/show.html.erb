@@ -27,19 +27,29 @@
 			<p id="proj_start"><%=project.start_date %></p>
 			<p id="proj_end"><%=project.end_date %></p>
 			<p id="proj_goal"><%=project.goal %></p>
-			<p id="proj_email"><%=project.user.email %></p>
 			<p id="proj_active"><%=project.active%></p>
 		</div>
 		<% end %>
 </div>
 <% else %>
-	<p>No Projects for <%= current_user.email%></p>
+	<p>No Projects for <%= @current_user.email%></p>
 <% end %>
 </div>
 
 
-
-
 <h2>Projects you are backing: </h2>
 
-***** Not a method, yet*****
+<% if @current_user.backed_projects.any? %>
+	<% @current_user.backed_projects.uniq.each do |proj| %>
+		<div id="backed_projects">
+			<p id="proj_name"><%= proj.name %> </p>
+			<p id="proj_descrip"><%= proj.description %> </p>
+			<p id="proj_start"><%=proj.start_date %></p>
+			<p id="proj_end"><%=proj.end_date %></p>
+			<p id="proj_goal"><%=proj.goal %></p>
+			<p id="proj_active"><%=proj.active%></p>
+		</div>	
+	<% end %>
+<% else %>
+	<p>No Backed Projects for <%= @current_user.email%></p>
+<% end %>
