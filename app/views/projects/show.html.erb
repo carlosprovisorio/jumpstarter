@@ -1,5 +1,6 @@
+<hr>
 <h1>Showing details for <%= @project.name %></h1>
-
+<hr>
 <%= link_to "Back to home", projects_path %> 
 
 <p>Name: <%= @project.name %> </p>
@@ -13,7 +14,7 @@
 <p id="amount-raised"> The amount raised: $<%= @project.amount_raised %> </p>
 
 
-
+<hr>
 <h2> Rewards </h2>
 
 <% if @project.rewards.any? %>
@@ -34,21 +35,25 @@
 
 <% end %>
 
-<h2> Pledges </h2>
+<hr>
+<h2> Pledges for this project </h2>
 
+<p>Pledged Amount:
+	<%= @current_user.pledged_amount(@project) %> 
+</p>
 
-<% if @current_user.pledges.any? %>
-	<% @current_user.pledges.each do |pledge| %>
+<%# if @current_user.pledges.any? %>
+	<%# @current_user.pledges.each do |pledge| %>
 	<div>
-		<p>You have pledged <%= pledge.reward.title %>
+		
 	</div>
-	<% end %>
+	<%# end %>
 
-<% else %>
+<%# else %>
 
 <p> No pledges for this project!.
 
-<% end %>
+<%# end %>
 
 
 

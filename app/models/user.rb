@@ -16,4 +16,13 @@ class User < ActiveRecord::Base
 	validates :email, uniqueness: true
 
 	accepts_nested_attributes_for :pledges, reject_if: :all_blank, allow_destroy: true
+
+	def pledged_amount(project)
+		amount = 0
+		self.pledges.each do |pledge|
+			amount += pledge.reward.price if pledge.reward.project == project  
+		end
+		return amount
+	end
+
 end
