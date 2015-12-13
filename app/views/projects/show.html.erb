@@ -1,38 +1,40 @@
 <h1>Showing details for <%= @project.name %></h1>
-
+<div class="row">
 <%= link_to "Back to home", projects_path %> 
+<div class="col-md-10 project_page_container">
+	<img class="project_page_image" src="http://www.placehold.it/400x400">
+	<p class="project_page_name margin"><%= @project.name %> </p>
+	<p class="project_page_summary margin">Summary: <%= @project.description %></p>
+	<p class="project_page_start margin">Start Date: <%= @project.start_date.to_date %></p>
+	<p class="project_page_end margin">End Date: <%= @project.end_date.to_date %></p>
+	<p class="project_page_goal margin">Goal: <%= @project.goal %></p>
+	<p class="project_page_owner margin">Owner: <%= @project.user.email %></p>
+	<p id="amount-raised"> The amount raised: $<%= @project.amount_raised %> </p>
+</div>
 
-<p>Name: <%= @project.name %> </p>
-<p>Summary: <%= @project.description %></p>
-<p>Start Date: <%= @project.start_date %></p>
-<p>End Date: <%= @project.end_date %></p>
-<p>Active: <%= @project.active %></p>
-<p>Goal: <%= @project.goal %></p>
-<p>Owner: <%= @project.user.email %></p>
 
-<p id="amount-raised"> The amount raised: $<%= @project.amount_raised %> </p>
+<div class="col-md-2 reward_container">
+	<h2 id="rewards_title"> Rewards </h2>
+	<% if @project.rewards.any? %>
 
+		<% @project.rewards.each do |reward| %>
 
+		<div class="reward_child">
+			<p>Reward Title: <%= reward.title %></p>
+			<p>Reward Price: <%= reward.price %></p>
+			<p>Reward Description: <%= reward.description %></p>
+			<p><%= link_to "Make a pledge to earn this reward", new_reward_pledge_path(reward) %></p>
+		</div>
+		<% end %>
 
-<h2> Rewards </h2>
+	<% else %>
 
-<% if @project.rewards.any? %>
+	<p> No rewards have been setup for this project!. </p>
 
-	<% @project.rewards.each do |reward| %>
-
-	<div>
-		<p>Reward Title: <%= reward.title %>
-		<p>Reward Price: <%= reward.price %>
-		<p>Reward Description: <%= reward.description %>
-		<p><%= link_to "Make a pledge to earn this reward", new_reward_pledge_path(reward) %>
-	</div>
 	<% end %>
+	</div>
 
-<% else %>
-
-<p> No rewards have been setup for this project!.
-
-<% end %>
+</div>
 
 <h2> Pledges </h2>
 
