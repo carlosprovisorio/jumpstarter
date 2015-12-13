@@ -1,3 +1,80 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Projects Owned //
+
+#owner_of {
+	margin-top: 5vh;
+	font-size: 4em;
+	text-align: center;
+	color: white;
+}
+
+.a_project {
+	margin-top: 10vh;
+	color: white;
+}
+
+.proj_placeholder_img {
+	max-height: auto;
+	max-width: 20vw;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2vh;
+}
+
+.proj_name {
+	margin-top: 4vh;
+	text-align: center;
+	font-size: 3em;
+}
+
+.proj_descrip {
+	font-size: 1.5em;
+	text-align: center;
+	width: 80%;
+	margin-top: 2vh;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.proj_start {
+	text-align: center;
+	margin-top: 2vh;
+	font-size: 2em;
+	color: green;
+}
+
+.proj_end {
+	text-align: center;
+	margin-top: 2vh;
+	font-size: 2em;
+	color: orange;
+}
+
+.proj_goal {
+	text-align: center;
+	margin-top: 2vh;
+	font-size: 3em;
+}
+
+.proj_active {
+	margin-top: 2vh;
+	font-size: 2em;
+	text-align: center;
+}
+
+// Projects Backed //
+
+#my_projects {
+	margin-bottom: 10vh;
+}
+
+#project_backed {
+	margin-top: 5vh;
+	font-size: 4em;
+	text-align: center;
+	color: white;
+}
