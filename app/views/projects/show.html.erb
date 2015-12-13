@@ -1,5 +1,7 @@
+<hr>
 <h1>Showing details for <%= @project.name %></h1>
 <div class="row">
+<hr>
 <%= link_to "Back to home", projects_path %> 
 <div class="col-md-10 project_page_container">
 	<img class="project_page_image" src="http://www.placehold.it/400x400">
@@ -26,6 +28,8 @@
 			<p><%= link_to "Make a pledge to earn this reward", new_reward_pledge_path(reward) %></p>
 		</div>
 		<% end %>
+<hr>
+<h2> Rewards </h2>
 
 	<% else %>
 
@@ -36,20 +40,13 @@
 
 </div>
 
-<h2> Pledges </h2>
+<hr>
+<h2> Pledges for this project </h2>
 
-<% if @current_user.pledges.any? %>
-	<% @current_user.pledges.each do |pledge| %>
-	<div>
-		<p>You have pledged <%= pledge.reward.title %>
-	</div>
-	<% end %>
+<p>Pledged Amount:
+	<%= @current_user.pledged_amount(@project) %> 
+</p>
 
-<% else %>
-
-<p> No pledges for this project!.
-
-<% end %>
 
 
 

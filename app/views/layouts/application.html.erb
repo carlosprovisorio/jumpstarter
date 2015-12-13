@@ -40,11 +40,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/">Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="#projects_display">Projects</a></li>
+        <li><a href="/"><span class="glyphicon glyphicon-cloud"></span> Home</a></li>
+        <li><a href="#projects_display"><span class="glyphicon glyphicon-file">Projects</a></li>
+
 
 		<% if current_user %>
-        <li><%= link_to 'My Profile', user_path(current_user.id)%>
+        <li><%= link_to '<span class="glyphicon glyphicon-user"></span> My Profile'.html_safe , user_path(current_user.id)%>
         </li>
         <% else %>
         <li><a href="sessions/new">Sign In</a></li>
