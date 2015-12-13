@@ -1,52 +1,41 @@
-<hr>
-<h1>Showing details for <%= @project.name %></h1>
-<div class="row">
-<hr>
-<%= link_to "Back to home", projects_path %> 
-<div class="col-md-10 project_page_container">
+
+<div class="row project_page_body">
+
+<div class="col-md-9 project_page_container">
 	<img class="project_page_image" src="http://www.placehold.it/400x400">
 	<p class="project_page_name margin"><%= @project.name %> </p>
-	<p class="project_page_summary margin">Summary: <%= @project.description %></p>
+	<p class="project_page_summary margin"><%= @project.description %></p>
 	<p class="project_page_start margin">Start Date: <%= @project.start_date.to_date %></p>
 	<p class="project_page_end margin">End Date: <%= @project.end_date.to_date %></p>
 	<p class="project_page_goal margin">Goal: <%= @project.goal %></p>
 	<p class="project_page_owner margin">Owner: <%= @project.user.email %></p>
-	<p id="amount-raised"> The amount raised: $<%= @project.amount_raised %> </p>
+	<p id="amount-raised"> Total Raised: $<%= @project.amount_raised %> </p>
 </div>
 
 
-<div class="col-md-2 reward_container">
-	<h2 id="rewards_title"> Rewards </h2>
+<div class="col-md-3 reward_container"> 
+	<h2 id="rewards_title"> Back Us! </h2>
 	<% if @project.rewards.any? %>
 
 		<% @project.rewards.each do |reward| %>
 
 		<div class="reward_child">
-			<p>Reward Title: <%= reward.title %></p>
-			<p>Reward Price: <%= reward.price %></p>
-			<p>Reward Description: <%= reward.description %></p>
-			<p><%= link_to "Make a pledge to earn this reward", new_reward_pledge_path(reward) %></p>
+			<p class="reward_title"><%= reward.title %></p>
+			<p class="reward_price">$<%= reward.price %></p>
+			<p class="reward_desc"><%= reward.description %></p>
+			<p class="purchase"><%= link_to "Purchase this reward", new_reward_pledge_path(reward) %></p>
 		</div>
 		<% end %>
-<hr>
-<h2> Rewards </h2>
 
 	<% else %>
 
-	<p> No rewards have been setup for this project!. </p>
+	<p> No rewards have been setup for this project! </p>
 
 	<% end %>
-	</div>
 
+<p id="pledged">Pledged Amount: </p>
+<p id="amount_pledged"> $<%= @current_user.pledged_amount(@project) %> </p>
 </div>
-
-<hr>
-<h2> Pledges for this project </h2>
-
-<p>Pledged Amount:
-	<%= @current_user.pledged_amount(@project) %> 
-</p>
-
 
 
 
