@@ -12,6 +12,7 @@
 </div>
 
 <hr>
+
 <h2>Projects you are the owner of:</h2>
 	<div class="row" id="my_projects">
 		<% if @projects_owned.any? %>
@@ -31,24 +32,56 @@
 		<% else %>
 			<p>No Projects for <%= @current_user.email%></p>
 		<% end %>
-	</div>
 
+<div class="row">
+	<div class="col-md-8">
+	<h2 id="owner_of">My Projects</h2>
+			<% if @projects_owned.any? %>
+				<div id="owner_projects_container">
+					<% @projects_owned.each do |project| %>
+						<div class="a_project">
+							<img class="proj_placeholder_img" src="http://www.placehold.it/800x800">
+							<p class="proj_name"><%= project.name %> </p>
+							<p class="proj_descrip"><%= project.description %> </p>
+							<p class="proj_start">Start Date: <%=project.start_date.strftime("%b %d, %Y")  %></p>
+							<p class="proj_end">End Date: <%=project.end_date.strftime("%b / %d / %Y")  %></p>
+							<p class="proj_active">Active: <%=project.active.to_s.capitalize! %></p>
+							<p class="proj_goal">Goal: $<%=project.goal %></p>
+							
+						</div>
+					<% end %>
+				</div>
+			<% else %>
+				<p>No Projects for <%= @current_user.email%></p>
+			<% end %>
+	</div>
+	<div class="col-md-2">
+	</div>
+</div>
 <hr>
-<h2>Projects you are backing: </h2>
-	<div class="row" id="my_projects">
+
+<div class="row" id="my_projects">
+	<div class="col-md-2">
+	</div>
+	<div class="col-md-8">
+		<h2 id="project_backed">Projects Backed: </h2>
+
 		<% if @current_user.backed_projects.any? %>
 			<% @current_user.backed_projects.uniq.each do |proj| %>
-				<div id="a_project">
-					<p id="proj_name"><%= proj.name %> </p>
-					<p id="proj_descrip"><%= proj.description %> </p>
-					<p id="proj_start">Start: <%=proj.start_date.strftime("%b / %d / %Y")  %></p>
-					<p id="proj_end">End: <%=proj.end_date.strftime("%b / %d / %Y")  %></p>
-					<p id="proj_goal">Goal: $<%=proj.goal %></p>
-					<p id="proj_active">Active ?: <%=proj.active%></p>
-					<br>
+
+				<div class="a_project">
+					<img class="proj_placeholder_img" src="http://www.placehold.it/800x800">
+					<p class="proj_name"><%= proj.name %> </p>
+					<p class="proj_descrip"><%= proj.description %> </p>
+					<p class="proj_start">Start: <%=proj.start_date.strftime("%b / %d / %Y")  %></p>
+					<p class="proj_end">End: <%=proj.end_date.strftime("%b %d, %Y")  %></p>
+					<p class="proj_active">Active : <%=proj.active.to_s.capitalize! %></p>
+					<p class="proj_goal">Goal: $<%=proj.goal %></p>
+
 				</div>	
 			<% end %>
 		<% else %>
 			<p>No Backed Projects for <%= @current_user.email%></p>
 		<% end %>
+	</div>
 	</div>

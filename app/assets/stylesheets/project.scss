@@ -138,3 +138,94 @@ body {
 #backg {
 	background-image: url('http://integralengineeringinc.com/wp-content/uploads/2014/09/blueprints.jpg');
 }
+
+// Project SHow Page //
+
+.project_page_body {
+	margin-top: 7vh;
+}
+
+
+.project_page_container {
+	display: border-box;
+	padding: 2%;
+	border-right: 2px solid white;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+}
+
+.project_page_name {
+	font-size: 10vh;
+}
+
+.project_page_summary {
+	width: 60%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.margin {
+	margin-top: 2vh;
+}
+
+.project_page_image {
+	margin-top: 2vh;
+	height: 40vh;
+	width: auto;
+}
+
+.reward_container {
+	margin-top: 5vh;
+	text-align: center;	
+}
+
+#rewards_title {
+	font-size: 3em;;
+	text-align: center;
+	color: white;
+}
+
+.reward_child {
+	width: 100%;
+	color: grey;
+}
+
+#amount-raised {
+	margin-top: 2vh;
+}
+
+.reward_title {
+	margin-top: 5vh;
+	color: grey;
+	font-size: 2em;
+}
+
+.reward_price {
+	margin-top: 2vh;
+	font-size: 2em;
+}
+
+.reward_desc {
+	margin-top: 1vh;
+	text-align: center;
+}
+
+.purchase {
+	margin-top: 2vh;
+}
+
+#pledged {
+	color: grey;
+	margin-top: 5vh;
+	font-size: 1.5em;
+}
+
+#amount_pledged {
+	color: grey;
+	margin-top: 2vh;
+	font-size: 2em;
+}
+
