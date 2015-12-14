@@ -6,7 +6,7 @@
 	<div class="col-md-2"></div>
 		<div class="col-md-8">
 			<p id="my_profile"> My Profile </p>
-			<p id="my_name"> <%= current_user.email %></p>
+			<p id="my_name"> Name: <%= current_user.name %></p>
 		</div>
 	<div class="col-md-2"></div>
 </div>
@@ -24,6 +24,7 @@
 						<p id="proj_end">End: <%=project.end_date.strftime("%b / %d / %Y")  %></p>
 						<p id="proj_goal">Goal: $<%=project.goal %></p>
 						<p id="proj_active">Active ?: <%=project.active%></p>
+						<br>
 					</div>
 				<% end %>
 			</div>
@@ -44,6 +45,7 @@
 					<p id="proj_end">End: <%=proj.end_date.strftime("%b / %d / %Y")  %></p>
 					<p id="proj_goal">Goal: $<%=proj.goal %></p>
 					<p id="proj_active">Active ?: <%=proj.active%></p>
+					<br>
 				</div>	
 			<% end %>
 		<% else %>
