@@ -3,7 +3,7 @@
 
 <div class="col-md-9 project_page_container">
 	<img class="project_page_image" src="http://www.placehold.it/400x400">
-	<p class="project_page_name margin"><%= link_to project.name, project_path(proj) %> </p> </p>
+	<p class="project_page_name margin"><%= link_to @project.name, project_path(@project) %> </p> </p>
 	<p class="project_page_summary margin"><%= @project.description %></p>
 	<p class="project_page_start margin">Start Date: <%= @project.start_date.to_date %></p>
 	<p class="project_page_end margin">End Date: <%= @project.end_date.to_date %></p>
