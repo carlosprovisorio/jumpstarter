@@ -45,7 +45,7 @@
 		<div class="project_box">
 			<img class="placeholder_img" src="https://placehold.it/2400x1600">
 			<div class="text_holder">
-				<p class="project_name"><%= p.name %></p>
+				<p class="project_name"><%= link_to p.name, project_path(p) %> </p></p>
 				<p class="description"> <%= p.description %></p>
 				<p class="end_date">End Date: <%= p.end_date.to_s.to_date %></p>
 				<p class="goal">Fundraising Goal: <%= p.goal %></p>
