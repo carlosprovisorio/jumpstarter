@@ -13,27 +13,10 @@
 
 <hr>
 
-<h2>Projects you are the owner of:</h2>
-	<div class="row" id="my_projects">
-		<% if @projects_owned.any? %>
-			<div id="owner_projects_container">
-				<% @projects_owned.each do |project| %>
-					<div id="a_project">
-						<p id="proj_name"><%= project.name %> </p>
-						<p id="proj_descrip"><%= project.description %> </p>
-						<p id="proj_start">Start: <%=project.start_date.strftime("%b / %d / %Y")  %></p>
-						<p id="proj_end">End: <%=project.end_date.strftime("%b / %d / %Y")  %></p>
-						<p id="proj_goal">Goal: $<%=project.goal %></p>
-						<p id="proj_active">Active ?: <%=project.active%></p>
-						<br>
-					</div>
-				<% end %>
-			</div>
-		<% else %>
-			<p>No Projects for <%= @current_user.email%></p>
-		<% end %>
+
 
 <div class="row">
+
 	<div class="col-md-8">
 	<h2 id="owner_of">My Projects</h2>
 			<% if @projects_owned.any? %>
