@@ -25,7 +25,7 @@
 					<% @projects_owned.each do |project| %>
 						<div class="a_project">
 							<img class="proj_placeholder_img" src="http://www.placehold.it/800x800">
-							<p class="proj_name"><%= project.name %> </p>
+							<p class="proj_name"><%= link_to project.name, project_path(project) %> </p>
 							<p class="proj_descrip"><%= project.description %> </p>
 							<p class="proj_start">Start Date: <%=project.start_date.strftime("%b %d, %Y")  %></p>
 							<p class="proj_end">End Date: <%=project.end_date.strftime("%b / %d / %Y")  %></p>
