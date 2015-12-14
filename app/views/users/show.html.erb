@@ -55,7 +55,7 @@
 
 				<div class="a_project">
 					<img class="proj_placeholder_img" src="http://www.placehold.it/800x800">
-					<p class="proj_name"><%= proj.name %> </p>
+					<p class="proj_name"><%= link_to proj.name, project_path(proj) %> </p>
 					<p class="proj_descrip"><%= proj.description %> </p>
 					<p class="proj_start">Start: <%=proj.start_date.strftime("%b / %d / %Y")  %></p>
 					<p class="proj_end">End: <%=proj.end_date.strftime("%b %d, %Y")  %></p>
